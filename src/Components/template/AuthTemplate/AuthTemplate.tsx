@@ -43,7 +43,9 @@ const AuthTemplate: React.FC<AuthTemplateProps> = ({
             {FormComponent && <FormComponent />}
           </div>
         </Col>
-        <Col md={6} className="right-column d-none d-lg-block">
+        <Col
+          md={6}
+          className="right-column col-md-12 col-lg-6 col-xl-6 col-xxl-6  ">
           <div className="right-info-view h-100">
             <AuthInfo authInfo={authInfo} />
           </div>

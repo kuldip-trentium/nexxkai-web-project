@@ -1,12 +1,16 @@
 import "./App.css";
-import AuthTemplate from "./Components/template/AuthTemplate/AuthTemplate";
-import { Container } from "react-bootstrap";
+import LoginScreen from "./Components/Screens/LoginScreen/LoginScreen";
+import SignUpScreen from "./Components/Screens/LoginScreen/SignUpScreen/SignUpScreen";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Container fluid>
-      <AuthTemplate />
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={LoginScreen} />
+        <Route path="/sign-up" Component={SignUpScreen} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

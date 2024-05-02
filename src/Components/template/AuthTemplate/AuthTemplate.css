@@ -1,41 +1,51 @@
-.auth-container {
-  margin: 20px;
-}
-
 .heading-text {
   font-size: 40px;
-  font-family: "Heebo", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   color: #2e2a40;
 }
 
 .description-text {
   font-size: 16px;
-  font-family: "Heebo", sans-serif;
   font-weight: 400;
   color: #2e2a40 !important;
 }
 
 .auth-row {
-  height: 95vh;
+  display: flex;
+  flex: 1;
+  margin: 10px !important;
 }
 
 .left-column {
-  height: 98vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  min-height: 98vh;
 }
 
+.logo-view {
+  margin-right: auto;
+  flex: 0.5;
+  margin-top: 30px;
+}
 .left-column-view {
-  max-width: 400px !important;
+  min-width: 400px;
+  @media (max-width: 400px) {
+    min-width: auto;
+  }
 }
 
 .right-column {
   border-radius: 15px;
-  background-color: #288fff;
+  background-color: #007aff;
+  padding: 40px 40px 80px 40px !important;
 }
-.right-info-view {
-  height: 100%;
+
+.back-btn {
+  font-size: 24px;
+}
+
+.footer-text {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 20px;
 }

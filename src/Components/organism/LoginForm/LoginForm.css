@@ -7,8 +7,7 @@
 .form-labels {
   font-size: 14px;
   font-weight: 500;
-  font-family: "Heebo", sans-serif;
-  padding-bottom: 10px !important;
+  padding-bottom: 5px !important;
 }
 
 .sign-in-btn {
@@ -22,7 +21,6 @@
   font-size: 18px;
   color: white;
   font-weight: 700;
-  font-family: "Heebo", sans-serif;
 }
 .eye-button {
   position: absolute;
@@ -35,12 +33,10 @@
   color: #007aff;
   font-weight: 500;
   text-decoration: none;
-  font-family: "Heebo", sans-serif;
 }
 .custom-input {
   background-color: #e7e7e7 !important;
   height: 60px !important;
-  border: none;
   border-radius: 8px;
   padding: 8px 12px;
 }
@@ -59,8 +55,9 @@
 }
 
 .register-text {
-  font-family: "Heebo", sans-serif;
   font-weight: 400;
 }
 
-
+.eye-icon {
+  color: gray;
+}

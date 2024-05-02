@@ -1,53 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "./AuthInfo.css";
+import { AuthInfoProps } from "./AuthInfo.props";
+import Spacer from "../../Atoms/Spacer/Spacer";
 
-const AuthInfo = () => {
+const AuthInfo: React.FC<AuthInfoProps> = ({ authInfo }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSelect = (selectedIndex: number) => {
+    setActiveIndex(selectedIndex);
+  };
   return (
     <>
-      <div className="auth-info-container">
-        <Carousel controls={false} className="carousel-container">
-          <Carousel.Item>
-            <div className="info-container">
-              <text className="header-text">Introducing</text> <br />
-              <text className="title-text">VoicerAI</text> <br />
-              <text className="description-carousel-text">
-                Effortless Call Management for <br /> Individuals and
-                Organizations
-              </text>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="info-container">
-              <text className="header-text">Introducing</text> <br />
-              <text className="title-text">VoicerAI</text> <br />
-              <text className="description-carousel-text">
-                Effortless Call Management for <br /> Individuals and
-                Organizations
-              </text>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="info-container">
-              <text className="header-text">Introducing</text> <br />
-              <text className="title-text">VoicerAI</text> <br />
-              <text className="description-carousel-text">
-                Effortless Call Management for <br /> Individuals and
-                Organizations
-              </text>
-            </div>
-          </Carousel.Item>
-        </Carousel>
-
+      <div className="auth-info-container d-flex justify-content-center align-items-end w-100 h-100">
         <div className="image-container">
-          <img
-            src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=500&dpr=1"
-            className="image"
-          />
+          <img src={authInfo[activeIndex]?.image} alt={"person image"} />
         </div>
-        <div className="footer-container">
-          <text className="footer-text">@2024 NeXxKai All Right Reserved.</text>
-        </div>
+
+        <Carousel
+          controls={false}
+          className="carousel-container"
+          activeIndex={activeIndex}
+          onSelect={handleSelect}>
+          {authInfo.map((info, index) => (
+            <Carousel.Item key={index} className="info-item">
+              <div className="info-container text-center">
+                <p className="header-text p-0 m-0">{info.label}</p>
+                <Spacer size={4} />
+                <p className="title-text p-0 m-0">{info.title}</p>
+                <Spacer size={6} />
+                <p className="description-carousel-text p-0 m-0">
+                  {info.description}
+                </p>
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
       </div>
     </>
   );

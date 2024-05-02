@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import "./LoginForm.css";
 import { Formik } from "formik";
-import * as Yup from "yup";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import Spacer from "../../Atoms/Spacer/Spacer";
+import { loginValidationSchema } from "../../../utils/Validations/validation";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,12 +17,7 @@ const LoginForm = () => {
     <Container className="login-form-container">
       <Formik
         initialValues={{ email: "", password: "" }}
-        validationSchema={Yup.object({
-          email: Yup.string()
-            .email("Invalid email address")
-            .required("Email is required"),
-          password: Yup.string().required("Password is required"),
-        })}
+        validationSchema={loginValidationSchema}
         onSubmit={(values, { setSubmitting }) => {
           console.log(values, "values");
         }}>
@@ -37,7 +32,7 @@ const LoginForm = () => {
         }) => (
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicEmail">
-              <text className="form-labels">Email</text>
+              <p className="form-labels pb-1 m-0">Email</p>
               <Form.Control
                 type="email"
                 name="email"
@@ -53,7 +48,7 @@ const LoginForm = () => {
             </Form.Group>
             <Spacer size={8} />
             <Form.Group controlId="formBasicPassword">
-              <text className="form-labels">Password</text>
+              <p className="form-labels pb-1 m-0">Password</p>
               <div className="password-field-input">
                 <Form.Control
                   type={showPassword ? "text" : "password"}
@@ -64,17 +59,21 @@ const LoginForm = () => {
                   isInvalid={!!errors.password}
                   className="custom-input"
                 />
-                <Button
-                  variant="link"
-                  onClick={togglePasswordVisibility}
-                  className="eye-button"
-                  aria-label={showPassword ? "Hide password" : "Show password"}>
-                  {showPassword ? (
-                    <AiOutlineEyeInvisible style={{ color: "gray" }} />
-                  ) : (
-                    <AiOutlineEye style={{ color: "gray" }} />
-                  )}
-                </Button>
+                {!errors.password && (
+                  <Button
+                    variant="link"
+                    onClick={togglePasswordVisibility}
+                    className="eye-button"
+                    aria-label={
+                      showPassword ? "Hide password" : "Show password"
+                    }>
+                    {showPassword ? (
+                      <AiOutlineEyeInvisible style={{ color: "gray" }} />
+                    ) : (
+                      <AiOutlineEye style={{ color: "gray" }} />
+                    )}
+                  </Button>
+                )}
                 <Form.Control.Feedback type="invalid">
                   {touched.password && errors.password}
                 </Form.Control.Feedback>
@@ -93,7 +92,7 @@ const LoginForm = () => {
             <div className="register-container">
               <text className="register-text">
                 Don't have an account?{" "}
-                <a href="/register" className="forgot-text">
+                <a href="/sign-up" className="forgot-text">
                   Register
                 </a>
               </text>

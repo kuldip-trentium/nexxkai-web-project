@@ -1,0 +1,20 @@
+.form-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-color: #f6f6f6 !important;
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 50px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #e5e5e5 !important;
+    border-radius: 50px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f6f6f6;
+  }
+}

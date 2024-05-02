@@ -1,3 +1,8 @@
 export interface AuthInfoProps {
-  id: number;
+  authInfo: {
+    label: string;
+    title: string;
+    description: string;
+    image: string;
+  }[];
 }

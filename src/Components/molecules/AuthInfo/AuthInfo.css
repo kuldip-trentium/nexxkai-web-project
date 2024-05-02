@@ -3,6 +3,10 @@
   background-image: url("../../../Assets/images/background.png");
   padding-left: 70px;
   padding-right: 70px;
+  @media (min-width: 1400px) {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
   @media (max-width: 1400px) {
     padding-left: 50px !important;
     padding-right: 50px !important;

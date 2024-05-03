@@ -64,7 +64,7 @@ const LoginForm = () => {
                   variant="link"
                   onClick={togglePasswordVisibility}
                   className={`eye-button ${
-                    errors.password ? "error-occurred" : ""
+                    errors.password && touched.password ? "error-occurred" : ""
                   }`}
                   aria-label={showPassword ? "Hide password" : "Show password"}>
                   {showPassword ? (

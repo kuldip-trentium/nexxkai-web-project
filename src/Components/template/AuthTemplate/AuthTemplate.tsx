@@ -33,8 +33,7 @@ const AuthTemplate: React.FC<AuthTemplateProps> = ({
                   className="btn btn-outline-none p-0">
                   <IoArrowBackSharp className="back-btn" />
                 </button>
-                <Spacer size={16} />
-                <br />
+                <Spacer size={8} />
               </>
             )}
             <p className="heading-text p-0 m-0">{title}</p>

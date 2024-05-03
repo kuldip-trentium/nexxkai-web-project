@@ -116,7 +116,7 @@ const SignUpForm = () => {
               <p className="form-labels pb-1 m-0">Password</p>
               <div className="password-field-input">
                 <Form.Control
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={values.password}
                   onChange={handleChange}
@@ -149,7 +149,7 @@ const SignUpForm = () => {
               <p className="form-labels pb-1 m-0">Confirm Password</p>
               <div className="password-field-input">
                 <Form.Control
-                  type="password"
+                  type={showConfirmPassword ? "text" : "password"}
                   name="confirmPassword"
                   value={values.confirmPassword}
                   onChange={handleChange}

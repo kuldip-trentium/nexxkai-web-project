@@ -14,7 +14,11 @@ const AuthInfo: React.FC<AuthInfoProps> = ({ authInfo }) => {
     <>
       <div className="auth-info-container d-flex justify-content-center align-items-end w-100 h-100">
         <div className="image-container">
-          <img src={authInfo[activeIndex]?.image} alt={"person image"} className="image" />
+          <img
+            src={authInfo[activeIndex]?.image}
+            alt={"person"}
+            className="image"
+          />
         </div>
 
         <Carousel

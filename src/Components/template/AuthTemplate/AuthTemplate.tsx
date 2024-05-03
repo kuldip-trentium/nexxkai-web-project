@@ -23,7 +23,7 @@ const AuthTemplate: React.FC<AuthTemplateProps> = ({
           md={6}
           className="left-column col-md-12 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-start align-items-center flex-column">
           <div className="logo-view">
-            <img src={logo} height={20} width={100} alt="logo image" />
+            <img src={logo} height={20} width={100} alt="logo" />
           </div>
           <div className="left-column-view">
             {!noBack && (

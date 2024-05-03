@@ -124,21 +124,21 @@ const SignUpForm = () => {
                   isInvalid={!!(touched.password && errors.password)}
                   className="custom-input"
                 />
-                {!errors.password && (
-                  <Button
-                    variant="link"
-                    onClick={togglePasswordVisibility}
-                    className="eye-button"
-                    aria-label={
-                      showPassword ? "Hide password" : "Show password"
-                    }>
-                    {showPassword ? (
-                      <AiOutlineEyeInvisible style={{ color: "gray" }} />
-                    ) : (
-                      <AiOutlineEye style={{ color: "gray" }} />
-                    )}
-                  </Button>
-                )}
+
+                <Button
+                  variant="link"
+                  onClick={togglePasswordVisibility}
+                  className={`eye-button ${
+                    errors.password ? "error-occurred" : ""
+                  }`}
+                  aria-label={showPassword ? "Hide password" : "Show password"}>
+                  {showPassword ? (
+                    <AiOutlineEyeInvisible style={{ color: "gray" }} />
+                  ) : (
+                    <AiOutlineEye style={{ color: "gray" }} />
+                  )}
+                </Button>
+
                 <Form.Control.Feedback type="invalid">
                   {errors.password}
                 </Form.Control.Feedback>
@@ -159,21 +159,23 @@ const SignUpForm = () => {
                   }
                   className="custom-input"
                 />
-                {!errors.confirmPassword && (
-                  <Button
-                    variant="link"
-                    onClick={toggleConfirmPasswordVisibility}
-                    className="eye-button"
-                    aria-label={
-                      showConfirmPassword ? "Hide password" : "Show password"
-                    }>
-                    {showConfirmPassword ? (
-                      <AiOutlineEyeInvisible className="eye-icon" />
-                    ) : (
-                      <AiOutlineEye className="eye-icon" />
-                    )}
-                  </Button>
-                )}
+
+                <Button
+                  variant="link"
+                  onClick={toggleConfirmPasswordVisibility}
+                  className={`eye-button ${
+                    errors.confirmPassword ? "error-occurred" : ""
+                  }`}
+                  aria-label={
+                    showConfirmPassword ? "Hide password" : "Show password"
+                  }>
+                  {showConfirmPassword ? (
+                    <AiOutlineEyeInvisible className="eye-icon p-0 m-0" />
+                  ) : (
+                    <AiOutlineEye className="eye-icon p-o m-0" />
+                  )}
+                </Button>
+
                 <Form.Control.Feedback type="invalid">
                   {errors.confirmPassword}
                 </Form.Control.Feedback>

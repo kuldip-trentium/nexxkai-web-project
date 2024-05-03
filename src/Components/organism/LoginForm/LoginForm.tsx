@@ -59,21 +59,21 @@ const LoginForm = () => {
                   isInvalid={!!errors.password}
                   className="custom-input"
                 />
-                {!errors.password && (
-                  <Button
-                    variant="link"
-                    onClick={togglePasswordVisibility}
-                    className="eye-button"
-                    aria-label={
-                      showPassword ? "Hide password" : "Show password"
-                    }>
-                    {showPassword ? (
-                      <AiOutlineEyeInvisible style={{ color: "gray" }} />
-                    ) : (
-                      <AiOutlineEye style={{ color: "gray" }} />
-                    )}
-                  </Button>
-                )}
+
+                <Button
+                  variant="link"
+                  onClick={togglePasswordVisibility}
+                  className={`eye-button ${
+                    errors.password ? "error-occurred" : ""
+                  }`}
+                  aria-label={showPassword ? "Hide password" : "Show password"}>
+                  {showPassword ? (
+                    <AiOutlineEyeInvisible className="eyr-icon p-0 m-0" />
+                  ) : (
+                    <AiOutlineEye className="eye-icon p-0 m-0" />
+                  )}
+                </Button>
+
                 <Form.Control.Feedback type="invalid">
                   {touched.password && errors.password}
                 </Form.Control.Feedback>

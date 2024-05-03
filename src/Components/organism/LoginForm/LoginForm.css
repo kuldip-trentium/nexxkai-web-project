@@ -28,6 +28,12 @@
   right: 10px;
   transform: translateY(-50%);
 }
+.error-occurred {
+  position: absolute;
+  top: 38%;
+  right: 10px;
+  transform: translateY(-50%);
+}
 .forgot-text {
   font-size: 16px;
   color: #007aff;
@@ -60,4 +66,11 @@
 
 .eye-icon {
   color: gray;
+}
+.custom-input:focus {
+  box-shadow: none !important;
+  border: none !important;
+}
+.is-invalid {
+  background-image: none !important;
 }

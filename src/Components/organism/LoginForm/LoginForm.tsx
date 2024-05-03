@@ -68,7 +68,7 @@ const LoginForm = () => {
                   }`}
                   aria-label={showPassword ? "Hide password" : "Show password"}>
                   {showPassword ? (
-                    <AiOutlineEyeInvisible className="eyr-icon p-0 m-0" />
+                    <AiOutlineEyeInvisible className="eye-icon p-0 m-0" />
                   ) : (
                     <AiOutlineEye className="eye-icon p-0 m-0" />
                   )}
